@@ -116,9 +116,9 @@ export const NETWORKS: NetworksObject = {
   "arbitrum one": {
     label: "Arbitrum One Mainnet",
     url: "https://arbiscan.io",
-    apiKey: process.env.APIKEY_BSCSCAN as string,
+    apiKey: process.env.APIKEY_ARBITRUMSCAN as string,
     endpoint: (contractAddress: string) =>
-      `https://api.arbiscan.io/api?module=contract&action=getsourcecode&address=${contractAddress}&apikey=${process.env.APIKEY_BSCSCAN}`,
+      `https://api.arbiscan.io/api?module=contract&action=getsourcecode&address=${contractAddress}&apikey=${process.env.APIKEY_ARBITRUMSCAN}`,
     section: "Arbitrum",
   },
   "arbitrum nova": {
@@ -168,5 +168,21 @@ export const NETWORKS: NetworksObject = {
     endpoint: (contractAddress: string) =>
       `https://api-testnet.ftmscan.com/api?module=contract&action=getsourcecode&address=${contractAddress}&apikey=${process.env.APIKEY_FTMSCAN}`,
     section: "Fantom",
+  },
+  sonic: {
+    label: "sonic",
+    url: "https://rpc.soniclabs.com",
+    apiKey: process.env.APIKEY_SONICSCAN as string,
+    endpoint: (contractAddress: string) =>
+      `https://api.sonicscan.org/api?module=contract&action=getsourcecode&address=${contractAddress}&apikey=${process.env.APIKEY_SONICSCAN}`,
+    section: "Sonic",
+  },
+  base: {
+    label: "base",
+    url: "https://rpc.soniclabs.com",
+    apiKey: process.env.APIKEY_BASESCAN as string,
+    endpoint: (contractAddress: string) =>
+      `https://api.basescan.org/api?module=contract&action=getsourcecode&address=${contractAddress}&apikey=${process.env.APIKEY_SONICSCAN}`,
+    section: "Base",
   },
 };
